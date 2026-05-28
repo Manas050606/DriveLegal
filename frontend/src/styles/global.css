@@ -1,0 +1,570 @@
+/* ==========================================
+   TAILWIND IMPORTS
+========================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root {
+
+    --background: #000000;
+
+    --foreground: #ffffff;
+
+    --card: #09090b;
+
+    --border: #27272a;
+
+    --muted: #71717a;
+
+    --cyan: #06b6d4;
+
+    --emerald: #10b981;
+
+    --red: #ef4444;
+
+    --yellow: #eab308;
+
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--background);
+
+    color: var(--foreground);
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: linear-gradient(
+        to bottom,
+        #06b6d4,
+        #10b981
+    );
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection {
+
+    background: rgba(6, 182, 212, 0.3);
+
+    color: white;
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+input,
+textarea,
+select {
+
+    outline: none;
+
+    border: none;
+
+    background: transparent;
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+button:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/* ==========================================
+   GLASSMORPHISM
+========================================== */
+
+.glass {
+
+    background: rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ==========================================
+   CYBER BORDER
+========================================== */
+
+.cyber-border {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.cyber-border::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 1px;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        135deg,
+        rgba(6, 182, 212, 0.7),
+        rgba(16, 185, 129, 0.7)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   GLOW EFFECTS
+========================================== */
+
+.glow-cyan {
+
+    box-shadow:
+        0 0 20px rgba(6, 182, 212, 0.35);
+}
+
+.glow-emerald {
+
+    box-shadow:
+        0 0 20px rgba(16, 185, 129, 0.35);
+}
+
+.glow-red {
+
+    box-shadow:
+        0 0 20px rgba(239, 68, 68, 0.35);
+}
+
+
+/* ==========================================
+   GRADIENT TEXT
+========================================== */
+
+.gradient-text {
+
+    background: linear-gradient(
+        to right,
+        #06b6d4,
+        #10b981
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes pulseGlow {
+
+    0% {
+
+        opacity: 0.5;
+
+        transform: scale(1);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.03);
+    }
+
+    100% {
+
+        opacity: 0.5;
+
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0px);
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+    }
+
+    100% {
+
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rotateSlow {
+
+    from {
+
+        transform: rotate(0deg);
+    }
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+
+    0% {
+
+        background-position: -1000px 0;
+    }
+
+    100% {
+
+        background-position: 1000px 0;
+    }
+}
+
+
+/* ==========================================
+   UTILITY CLASSES
+========================================== */
+
+.animate-pulse-glow {
+
+    animation: pulseGlow 2s infinite;
+}
+
+.animate-float {
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+
+    animation: rotateSlow 20s linear infinite;
+}
+
+.shimmer {
+
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 25%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 75%
+    );
+
+    background-size: 1000px 100%;
+
+    animation: shimmer 2s infinite linear;
+}
+
+
+/* ==========================================
+   GRID BACKGROUND
+========================================== */
+
+.grid-background {
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+
+/* ==========================================
+   CARD STYLES
+========================================== */
+
+.dashboard-card {
+
+    border-radius: 24px;
+
+    border: 1px solid #27272a;
+
+    background: rgba(9, 9, 11, 0.9);
+
+    padding: 24px;
+
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.status-success {
+
+    background: rgba(16, 185, 129, 0.12);
+
+    color: #10b981;
+
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.status-warning {
+
+    background: rgba(234, 179, 8, 0.12);
+
+    color: #eab308;
+
+    border: 1px solid rgba(234, 179, 8, 0.25);
+}
+
+.status-danger {
+
+    background: rgba(239, 68, 68, 0.12);
+
+    color: #ef4444;
+
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.status-info {
+
+    background: rgba(6, 182, 212, 0.12);
+
+    color: #06b6d4;
+
+    border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+
+/* ==========================================
+   RESPONSIVE TYPOGRAPHY
+========================================== */
+
+h1 {
+
+    line-height: 1.1;
+}
+
+p {
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   RESPONSIVE FIXES
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .dashboard-card {
+
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+
+        font-size: 14px;
+    }
+
+    .dashboard-card {
+
+        border-radius: 20px;
+    }
+}
+
+
+/* ==========================================
+   LOADER EFFECT
+========================================== */
+
+.loader-ring {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 999px;
+
+    border: 4px solid rgba(255, 255, 255, 0.08);
+
+    border-top-color: #06b6d4;
+
+    animation: rotateSlow 1s linear infinite;
+}
+
+
+/* ==========================================
+   BLUR ORBS
+========================================== */
+
+.blur-orb-cyan {
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    background: rgba(6, 182, 212, 0.15);
+
+    filter: blur(120px);
+
+    border-radius: 999px;
+}
+
+.blur-orb-emerald {
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    background: rgba(16, 185, 129, 0.15);
+
+    filter: blur(120px);
+
+    border-radius: 999px;
+}
+
+
+/* ==========================================
+   TRANSITIONS
+========================================== */
+
+.transition-default {
+
+    transition:
+        all 0.3s ease;
+}
