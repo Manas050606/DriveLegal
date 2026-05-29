@@ -1,252 +1,355 @@
-DriveLegal AI 🚗⚡
+# 🚦 DriveLegal AI
 
-AI-powered Vehicle Verification, OCR Analysis, Fraud Detection, and Intelligent Security Monitoring Platform.
+### AI-Powered Vehicle Compliance & Fraud Verification Platform
 
-📌 Overview
+DriveLegal AI is an intelligent vehicle compliance and fraud verification platform designed to enhance road safety through automated document validation, number plate recognition, QR authentication, fraud risk assessment, and real-time analytics.
 
-DriveLegal AI is an enterprise-grade AI-powered vehicle document verification platform designed to automate:
+Built as part of the **IIT Madras Road Safety Hackathon 2026**, DriveLegal AI aims to assist vehicle owners, traffic enforcement agencies, and transport authorities in identifying fraudulent vehicle records and improving compliance monitoring.
 
-Vehicle document verification
-OCR extraction
-Number plate detection
-Fraud intelligence analysis
-AI anomaly detection
-Verification workflows
-Admin security monitoring
+---
 
-The system combines:
+## 🌟 Problem Statement
 
-FastAPI backend
-React + Vite frontend
+Vehicle verification in many regions still relies heavily on manual inspection, making the process:
+
+* Slow
+* Error-prone
+* Vulnerable to fraud
+* Difficult to scale
+
+Common challenges include:
+
+* Fake Registration Certificates (RC)
+* Tampered Insurance Documents
+* Forged Number Plates
+* Fraudulent QR Credentials
+* Delayed Compliance Verification
+* Lack of Centralized Monitoring
+
+These issues can compromise road safety and hinder effective law enforcement.
+
+---
+
+## 💡 Solution Overview
+
+DriveLegal AI provides a unified verification ecosystem that combines:
+
+* Optical Character Recognition (OCR)
+* Computer Vision
+* QR Authentication
+* Fraud Risk Assessment
+* Analytics & Monitoring
+
+into a single intelligent platform.
+
+The system automatically analyzes uploaded vehicle documents and images, verifies authenticity, generates risk scores, and produces actionable verification reports.
+
+---
+
+# 🏗 System Architecture
+
+```text
+User Portal
+     │
+     ▼
+Web Dashboard (React.js)
+     │
+     ▼
+FastAPI Backend
+     │
+     ▼
+AI Verification Engine
+ ├── OCR Extraction
+ ├── Vehicle Data Verification
+ ├── Number Plate Recognition
+ ├── QR Authentication
+ ├── Fraud Risk Assessment
+ └── Authenticity Score Generation
+     │
+     ▼
 MongoDB Atlas
-OpenCV
-OCR pipelines
-AI verification workflows
+     │
+     ▼
+Analytics Dashboard
+     │
+     ▼
+Verification Report
+     │
+     ▼
+Authorities & Vehicle Owners
+```
 
-to deliver a production-ready cyber-security styled intelligent transportation verification platform.
+---
 
-🚀 Key Features
-✅ AI OCR Document Processing
-Upload RC documents
-Insurance verification
-License verification
-OCR text extraction
-Confidence scoring
-✅ Number Plate Detection
-Vehicle image upload
-AI-based plate detection
-OCR number extraction
-Vehicle verification workflow
-✅ Fraud Detection Engine
-Metadata anomaly detection
-Suspicious OCR pattern analysis
-Tampering detection
-AI fraud probability scoring
-✅ Verification Dashboard
-Verification confidence analytics
-Fraud probability visualization
-Verification timelines
-AI decision engine
-✅ Enterprise Admin Panel
-Live monitoring dashboard
-Threat intelligence feed
-System health analytics
-Fraud monitoring center
-Verification metrics
-🧠 AI Modules
-Module	Description
-OCR Engine	Extracts text from uploaded documents
-Fraud AI	Detects suspicious manipulation
-Plate Recognition	Extracts vehicle registration numbers
-Verification AI	Performs authenticity validation
-Monitoring Engine	Tracks live fraud activity
-🛠️ Tech Stack
-Frontend
-React 19
-Vite
-Tailwind CSS
-Framer Motion
-React Router
-Axios
-Lucide React
-Backend
-FastAPI
-Python
-MongoDB Atlas
-JWT Authentication
-OpenCV
-Tesseract OCR
-Scikit-learn
-Database
-MongoDB Atlas
-AI / OCR
-OpenCV
-pytesseract
-Pillow
-NumPy
-📂 Project Structure
+# 🔄 Verification Workflow
+
+```text
+Upload Vehicle Data
+          ↓
+OCR Data Extraction
+          ↓
+Vehicle Data Verification
+          ↓
+Number Plate Recognition
+          ↓
+QR Authentication
+          ↓
+Fraud Risk Assessment
+          ↓
+Authenticity Score Generation
+          ↓
+Verification Report
+          ↓
+Analytics & Monitoring
+          ↓
+Authorities & Vehicle Owners
+```
+
+---
+
+# ✨ Key Features
+
+## 📄 OCR-Based Document Intelligence
+
+Extracts critical information from:
+
+* Registration Certificates (RC)
+* Insurance Documents
+* Vehicle Images
+* QR Documents
+
+Extracted Information:
+
+* Vehicle Number
+* Owner Details
+* Registration Information
+* Insurance Information
+
+---
+
+## 🚗 Number Plate Recognition
+
+Uses OpenCV and OCR techniques to:
+
+* Detect Number Plates
+* Extract Registration Numbers
+* Verify Plate Information
+* Improve Vehicle Identification
+
+---
+
+## 🔐 QR Authentication
+
+Performs:
+
+* QR Integrity Verification
+* Metadata Validation
+* Authenticity Matching
+* Credential Verification
+
+---
+
+## 🛡 Fraud Risk Assessment
+
+Analyzes:
+
+* Suspicious OCR Patterns
+* Potential Document Tampering
+* Duplicate Vehicle Records
+* Metadata Inconsistencies
+* Fraud Indicators
+
+---
+
+## 📊 Analytics Dashboard
+
+Provides:
+
+* Fraud Trends
+* Verification History
+* Risk Alerts
+* Compliance Monitoring
+* Performance Insights
+
+---
+
+# 🎯 Authenticity Scoring System
+
+Each verification request generates an authenticity score between 0 and 100.
+
+| Score Range | Status          |
+| ----------- | --------------- |
+| 0 – 40      | High Risk       |
+| 41 – 70     | Review Required |
+| 71 – 100    | Verified        |
+
+The scoring system helps authorities quickly identify suspicious vehicle records and prioritize investigations.
+
+---
+
+# 🛠 Technology Stack
+
+## Frontend
+
+* React.js
+* Vite
+* Tailwind CSS
+* Framer Motion
+* React Router DOM
+
+## Backend
+
+* FastAPI
+* Python
+* JWT Authentication
+* REST APIs
+
+## AI & Computer Vision
+
+* OpenCV
+* EasyOCR
+* Tesseract OCR
+
+## Database
+
+* MongoDB Atlas
+
+## Development Tools
+
+* Git
+* GitHub
+* VS Code
+* Postman
+
+---
+
+# 📂 Project Structure
+
+```text
 DriveLegal-AI/
 │
-├── backend/
-│
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── styles/
-│   │   ├── utils/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── tailwind.config.js
-│   └── postcss.config.js
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── assets/
+│   └── styles/
 │
-├── uploads/
-├── tests/
-├── requirements.txt
-├── .env
-└── README.md
-⚙️ Installation Guide
-1️⃣ Clone Repository
-git clone https://github.com/your-username/DriveLegal-AI.git
-cd DriveLegal-AI
-2️⃣ Backend Setup
+├── backend/
+│   ├── routes/
+│   ├── models/
+│   ├── auth/
+│   ├── ai_engine/
+│   └── database/
+│
+├── docs/
+├── screenshots/
+├── README.md
+└── requirements.txt
+```
 
-Install Python dependencies:
+---
 
-pip install -r requirements.txt
-3️⃣ Configure Environment Variables
+# 🚀 Installation
 
-Create .env
+## Clone Repository
 
-MONGO_URI=your_mongodb_atlas_uri
+```bash
+git clone https://github.com/yourusername/drivelegal-ai.git
+cd drivelegal-ai
+```
 
-JWT_SECRET_KEY=your_secret_key
+---
 
-PORT=5000
-4️⃣ Install Tesseract OCR
-Windows
+## Frontend Setup
 
-Download:
-
-https://github.com/UB-Mannheim/tesseract/wiki
-
-Add installation path to system environment variables.
-
-Example:
-
-C:\Program Files\Tesseract-OCR
-5️⃣ Run Backend
-uvicorn main:app --reload
-
-Backend runs on:
-
-http://localhost:5000
-6️⃣ Frontend Setup
+```bash
 cd frontend
 
-Install dependencies:
-
 npm install
-7️⃣ Start Frontend
+
 npm run dev
+```
 
 Frontend runs on:
 
+```text
 http://localhost:5173
-🌐 MongoDB Atlas Setup
-Create Cluster
-Create MongoDB Atlas account
-Create free cluster
-Create database user
-Add IP access:
-0.0.0.0/0
-Connection String
-MONGO_URI=mongodb+srv://USERNAME:PASSWORD@cluster.mongodb.net/drivelegal_ai?retryWrites=true&w=majority
-🔐 Authentication System
+```
 
-DriveLegal AI includes:
+---
 
-JWT Authentication
-Protected Routes
-Secure Token Validation
-Login/Register System
-Session Management
-📊 Dashboard Features
-Admin Dashboard
-Live AI monitoring
-Fraud analytics
-Verification statistics
-Threat monitoring
-OCR metrics
-Verification Dashboard
-AI confidence score
-Fraud probability
-OCR extraction details
-Verification timelines
-🧪 API Endpoints
-Endpoint	Method	Description
-/api/auth/login	POST	User Login
-/api/auth/register	POST	User Registration
-/api/upload	POST	Upload Documents
-/api/ocr/extract	POST	OCR Extraction
-/api/fraud/analyze	POST	Fraud Detection
-/api/verify	POST	Verification
-🎨 UI Highlights
-Cyber-security inspired design
-Glassmorphism UI
-AI dashboard animations
-Responsive layout
-Enterprise admin interface
-Neon glow effects
-🔥 Future Improvements
-Real-time WebSocket monitoring
-AI deep learning fraud models
-Cloud deployment
-Docker integration
-Kubernetes deployment
-Vehicle owner database integration
-Government API integration
-Mobile app support
-📸 Screenshots
+## Backend Setup
 
-Add screenshots here:
+```bash
+cd backend
 
-/screenshots/dashboard.png
-/screenshots/fraud-detection.png
-/screenshots/admin-panel.png
-🚀 Deployment
-Frontend
+pip install -r requirements.txt
 
-Deploy using:
+uvicorn main:app --reload
+```
 
-Vercel
-Netlify
-Backend
+Backend runs on:
 
-Deploy using:
+```text
+http://localhost:8000
+```
 
-Render
-Railway
-AWS
-DigitalOcean
-🧠 Learning Outcomes
+---
 
-This project demonstrates:
+# 🔒 Security Features
 
-Full Stack Development
-AI Integration
-OCR Pipelines
-Cyber-security UI Design
-Authentication Systems
-MongoDB Integration
-FastAPI Backend Development
-Enterprise Dashboard Architecture
-👨‍💻 Author
-Partha Khare
+* JWT Authentication
+* Password Hashing
+* Protected Routes
+* Secure API Access
+* Verification Log Tracking
 
-CSE (Core)
-VIT Bhopal University
+---
+
+# 📈 Scalability & Future Scope
+
+Planned enhancements include:
+
+* VAHAN Integration
+* RTO Database Connectivity
+* Insurance API Verification
+* Mobile Application
+* Blockchain-Based Verification
+* CCTV-Based Vehicle Monitoring
+* Predictive Fraud Analytics
+* Smart City Integration
+
+---
+
+# 🌍 Expected Impact
+
+DriveLegal AI contributes toward:
+
+✅ Reduced Vehicle Fraud
+
+✅ Improved Road Safety
+
+✅ Faster Verification Processes
+
+✅ Enhanced Regulatory Compliance
+
+✅ Better Enforcement Efficiency
+
+✅ Data-Driven Transportation Governance
+
+---
+
+# 👨‍💻 Team Zenith
+
+### IIT Madras Road Safety Hackathon 2026
+
+DriveLegal AI demonstrates how AI, Computer Vision, and Intelligent Verification Systems can be leveraged to create safer and more transparent transportation ecosystems.
+
+---
+
+## 📜 License
+
+This project is developed for educational, research, and hackathon purposes.
+
+© 2026 Team Zenith
